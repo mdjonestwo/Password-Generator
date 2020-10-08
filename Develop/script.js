@@ -1,6 +1,7 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
+// Arrays to randomize 
 let specialChar = [
   "!",
   "@",
@@ -90,6 +91,19 @@ let number = [
   "9",
   "0"
 ];
+
+// Questions for user
+let lengthOfPass = prompt('How many characters would you like in your password? (Enter a number between 8 and 128)')
+
+let ifSpecialChar = confirm("Would you like special characters in your password?");
+let ifLowerCase = confirm("Would you like lower case characters in your password?");
+let ifUpperCase = confirm("Would you like upper case characters in your password?")
+let ifNumber = confirm("Would you like numbers in your password?");
+
+
+randomFunc = {
+  Loe
+}
 
 
 
