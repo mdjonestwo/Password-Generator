@@ -78,8 +78,7 @@ var upperCase = [
 ];
 var number = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
 
-
-//takes user input for password options and turns result into an object
+//Takes user input for password criteria and turns result into an object
 function setPassOptions() {
   var length = parseInt(
     prompt(
@@ -124,7 +123,7 @@ function setPassOptions() {
   return passConditionsObj;
 }
 
-//randomizes data in an array 
+//Randomizes data in an array
 function randomizer(arr) {
   var randomIndex = Math.floor(Math.random() * arr.length);
   var randomElement = arr[randomIndex];
@@ -132,11 +131,11 @@ function randomizer(arr) {
 }
 
 function generatePassword() {
-  // turns object into variable
+  // Turns object(passConditionsObj) into variable
   var options = setPassOptions();
-  // array for new password
+  // Creates blanks array for new password
   var resolve = [];
-  //if objects(passConditionsObj are true add to possibleChar array. else, dont.)
+  //If properties in passConditionsObj are true add to possibleChar array. Else, dont.)
   var possibleChar = [];
   if (options.ifSpecialChar) {
     possibleChar = possibleChar.concat(specialChar);
@@ -150,13 +149,12 @@ function generatePassword() {
   if (options.ifNumber) {
     possibleChar = possibleChar.concat(number);
   }
- // console.log(possibleChar);
-//randomize the possibleChar array and push it to the resolve array to create the new password by the length added by user
+  //Randomize the possibleChar array and push it to the resolve array to create the new password by the length added by user
   for (var i = 0; i < options.length; i++) {
     var possiblePass = randomizer(possibleChar);
     resolve.push(possiblePass);
   }
-  //turns array into string
+  //Turns array into string
   return resolve.toString();
 }
 
